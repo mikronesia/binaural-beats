@@ -1,0 +1,48 @@
+#N canvas 161 95 868 572 10;
+#X obj 170 329 osc~;
+#X obj 410 344 osc~;
+#X obj 208 470 dac~;
+#X floatatom 170 202 5 0 0 0 - - -, f 5;
+#X msg 605 264 \; pd dsp \$1;
+#X obj 605 240 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+1;
+#X obj 410 282 +;
+#X obj 416 147 hsl 128 15 0 50 0 0 empty empty empty -2 -8 0 10 -4032
+-1 -1 12700 1;
+#X floatatom 410 307 5 0 0 0 - - -, f 5;
+#X floatatom 410 212 5 0 0 0 beat_frequency - -, f 5;
+#X obj 410 247 t b f;
+#X text 306 146 base frequency;
+#X text 446 306 shifted frequency;
+#X obj 225 300 noise~;
+#X obj 243 340 hsl 130 15 0 0.1 0 0 empty empty empty -2 -8 0 10 -162280
+-1 -1 0 1;
+#X obj 225 362 *~;
+#X text 238 323 noise volume (0-0.1);
+#X text 548 147 slide frequency difference (0-20Hz);
+#X obj 412 104 ctlin 16 1;
+#X obj 162 104 ctlin 13 1;
+#X obj 165 146 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -258113
+-1 -1 3100 1;
+#X obj 202 178 * 10;
+#X text 457 187 Gamma: 30 to 50 Hz Beta: 14 to 30 Hz Alpha: 8 to 14
+Hz Theta: 4 to 8 Hz Delta 0.1 to 4 Hz, f 22;
+#X connect 0 0 2 0;
+#X connect 1 0 2 1;
+#X connect 3 0 0 0;
+#X connect 3 0 6 0;
+#X connect 5 0 4 0;
+#X connect 6 0 8 0;
+#X connect 7 0 9 0;
+#X connect 8 0 1 0;
+#X connect 9 0 10 0;
+#X connect 10 0 6 0;
+#X connect 10 1 6 1;
+#X connect 13 0 15 0;
+#X connect 14 0 15 1;
+#X connect 15 0 2 1;
+#X connect 15 0 2 0;
+#X connect 18 0 7 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 21 0 3 0;
